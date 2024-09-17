@@ -1,8 +1,8 @@
 "use strict";
 
-const optionService = require('./options');
-const log = require('./log');
-const utils = require('./utils');
+const optionService = require('./options.js');
+const log = require('./log.js');
+const utils = require('./utils.js');
 
 const isMac = process.platform === "darwin";
 const isElectron = utils.isElectron();
@@ -219,7 +219,7 @@ const DEFAULT_KEYBOARD_ACTIONS = [
     {
         actionName: "reopenLastTab",
         defaultShortcuts: isElectron ? ["CommandOrControl+Shift+T"] : [],
-        description: "重新打开关闭的标签",
+        description: "Reopens the last closed tab",
         scope: "window"
     },
     {
@@ -243,67 +243,67 @@ const DEFAULT_KEYBOARD_ACTIONS = [
     {
         actionName: "toggleTray",
         defaultShortcuts: [],
-        description: "Shows/hides the application from the system tray",
+        description: "显示/隐藏应用程序从系统托盘",
         scope: "window"
     },
     {
         actionName: "firstTab",
         defaultShortcuts: ["CommandOrControl+1"],
-        description: "Activates the first tab in the list",
+        description: "激活列表中的第1个标签",
         scope: "window"
     },
     {
         actionName: "secondTab",
         defaultShortcuts: ["CommandOrControl+2"],
-        description: "Activates the second tab in the list",
+        description: "激活列表中的第2个标签",
         scope: "window"
     },
     {
         actionName: "thirdTab",
         defaultShortcuts: ["CommandOrControl+3"],
-        description: "Activates the third tab in the list",
+        description: "激活列表中的第3个标签",
         scope: "window"
     },
     {
         actionName: "fourthTab",
         defaultShortcuts: ["CommandOrControl+4"],
-        description: "Activates the fourth tab in the list",
+        description: "激活列表中的第4个标签",
         scope: "window"
     },
     {
         actionName: "fifthTab",
         defaultShortcuts: ["CommandOrControl+5"],
-        description: "Activates the fifth tab in the list",
+        description: "激活列表中的第5个标签",
         scope: "window"
     },
     {
         actionName: "sixthTab",
         defaultShortcuts: ["CommandOrControl+6"],
-        description: "Activates the sixth tab in the list",
+        description: "激活列表中的第6个标签",
         scope: "window"
     },
     {
         actionName: "seventhTab",
         defaultShortcuts: ["CommandOrControl+7"],
-        description: "Activates the seventh tab in the list",
+        description: "激活列表中的第7个标签",
         scope: "window"
     },
     {
         actionName: "eigthTab",
         defaultShortcuts: ["CommandOrControl+8"],
-        description: "Activates the eigth tab in the list",
+        description: "Activates the eighth tab in the list",
         scope: "window"
     },
     {
         actionName: "ninthTab",
         defaultShortcuts: ["CommandOrControl+9"],
-        description: "Activates the ninth tab in the list",
+        description: "激活列表中的第9个标签",
         scope: "window"
     },
     {
         actionName: "lastTab",
-        defaultShortcuts: ["CommandOrControl+0"],
-        description: "Activates the last tab in the list",
+        defaultShortcuts: [],
+        description: "激活列表中的最后一个标签",
         scope: "window"
     },
 
@@ -495,8 +495,15 @@ const DEFAULT_KEYBOARD_ACTIONS = [
     },
 
     {
+        actionName: "toggleRightPane",
+        defaultShortcuts: [],
+        description: "Toggle the display of the right pane, which includes Table of Contents and Highlights",
+        scope: "window"
+    },
+    {
         actionName: "printActiveNote",
         defaultShortcuts: [],
+        description: "Print active note",
         scope: "window"
     },
     {
@@ -572,7 +579,7 @@ const DEFAULT_KEYBOARD_ACTIONS = [
     },
     {
         actionName: "zoomReset",
-        description: "Reset zoom level",
+        description: "重置缩放级别",
         defaultShortcuts: isElectron ? ["CommandOrControl+0"] : [],
         scope: "window"
     },

@@ -1,13 +1,13 @@
-const attributeService = require("./attributes");
-const dateNoteService = require("./date_notes");
-const becca = require("../becca/becca");
-const noteService = require("./notes");
-const dateUtils = require("./date_utils");
-const log = require("./log");
-const hoistedNoteService = require("./hoisted_note");
-const searchService = require("./search/services/search");
-const SearchContext = require("./search/search_context");
-const {LBTPL_NOTE_LAUNCHER, LBTPL_CUSTOM_WIDGET, LBTPL_SPACER, LBTPL_SCRIPT} = require("./hidden_subtree");
+const attributeService = require('./attributes.js');
+const dateNoteService = require('./date_notes.js');
+const becca = require('../becca/becca.js');
+const noteService = require('./notes.js');
+const dateUtils = require('./date_utils.js');
+const log = require('./log.js');
+const hoistedNoteService = require('./hoisted_note.js');
+const searchService = require('./search/services/search.js');
+const SearchContext = require('./search/search_context.js');
+const {LBTPL_NOTE_LAUNCHER, LBTPL_CUSTOM_WIDGET, LBTPL_SPACER, LBTPL_SCRIPT} = require('./hidden_subtree.js');
 
 function getInboxNote(date) {
     const workspaceNote = hoistedNoteService.getWorkspaceNote();
@@ -169,7 +169,7 @@ function createLauncher({parentNoteId, launcherType, noteId}) {
     } else if (launcherType === 'customWidget') {
         note = noteService.createNewNote({
             noteId: noteId,
-            title: "Widget Launcher",
+            title: "部件启动器",
             type: 'launcher',
             content: '',
             parentNoteId: parentNoteId
